@@ -21,7 +21,7 @@ typedef struct thread
 
 int main(void)
 {
-	int N = 2;
+	int N = 1;
 	pthread_t threads[N];
 	long long i = 0;
 	for(;i^N;++i)
