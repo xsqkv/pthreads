@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<pthread.h>
-#include <unistd.h>
+#include<unistd.h>
 
 unsigned long long a[8],b[8];
 
@@ -21,7 +21,7 @@ typedef struct thread
 
 int main(void)
 {
-	int N = 1;
+	int N = 8;
 	pthread_t threads[N];
 	long long i = 0;
 	for(;i^N;++i)
