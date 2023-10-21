@@ -1,8 +1,6 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include<pthread.h>
-
-typedef unsigned char ubyte;
+#include <unistd.h>
 
 unsigned long long a[8],b[8];
 
@@ -10,7 +8,7 @@ void *f(void *n)
 {
 	for(;;)
 	{
-		++a[(ubyte)n];
+		++a[(long long)n];
 	}	
 	pthread_exit(0);
 }
@@ -23,13 +21,13 @@ typedef struct thread
 
 int main(void)
 {
-	ubyte N = 2;
+	int N = 2;
 	pthread_t threads[N];
-	ubyte i = 0;
+	long long i = 0;
 	for(;i^N;++i)
 	{
 		//threads[i].data = (int *)(i+1);
-		pthread_create(&threads[i],NULL,f,(ubyte)i);
+		pthread_create(&threads[i],NULL,f,(void*)i);
 		//pthread_join(threads[i].thr,NULL);
 	}
 

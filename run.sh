@@ -1,1 +1,1 @@
-gcc -lpthread main.c -o main && ./main
+gcc -lpthread -std=c17 main.c -o main && ./main
