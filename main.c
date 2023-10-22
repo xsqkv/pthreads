@@ -2,7 +2,9 @@
 #include<pthread.h>
 #include<unistd.h>
 
-unsigned long long a[8],b[8];
+#define N 8
+
+unsigned long long a[N],b[N];
 
 void *f(void *n)
 {
@@ -21,7 +23,6 @@ typedef struct thread
 
 int main(void)
 {
-	int N = 8;
 	pthread_t threads[N];
 	long long i = 0;
 	for(;i^N;++i)
